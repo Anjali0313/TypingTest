@@ -21,7 +21,7 @@ let timerInterval;
 let timerStarted = false;
 let numWords =0;
 let originalText = "";
-
+let currentStory = null;
 
 const textDiv = document.querySelector('.text');
 const nextBtn = document.querySelector('#Next-btn');
@@ -29,7 +29,23 @@ const titleEl = document.getElementById('title');
 const contentEl = document.getElementById('content');
 const timeEl = document.querySelector('#time');
 timeEl.textContent = `Time: ${timeLeft}`;
-let currentStory = null;
+const openModalBtn = document.getElementById('openModal');
+const closeModalBtn = document.getElementById('closeModal');
+const modalOverlay = document.getElementById('modalOverlay');
+openModalBtn.addEventListener('click', () => {
+  modalOverlay.classList.add('show');
+});
+
+
+closeModalBtn.addEventListener('click', () => {
+  modalOverlay.classList.remove('show');
+});
+
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) {
+    modalOverlay.classList.remove('show');
+  }
+})
 
 fetch('/api/stories')
   .then(response => response.json())
