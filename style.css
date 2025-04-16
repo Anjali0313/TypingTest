@@ -158,6 +158,28 @@ main .text p{
     color: #7f8c8d;
     line-height: 1.6;
   }
+  #start, #resetBtn, #Next-btn {
+    background-color: #3498db; 
+    color: white;
+    padding: 10px 20px;
+  
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    transition: background-color 0.3s;
+  }
+  
+#start:hover {
+  background-color: #18885b;
+}
+
+#resetBtn:hover {
+  background-color: #e74c3c;
+}
+
+#Next-btn:hover {
+  background-color: #ae2752; 
+}
   @media (max-width: 768px) {
     .modal-content {
       max-width: 100%;
