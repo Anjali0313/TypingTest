@@ -74,10 +74,13 @@ function startTimer() {
     if (timeLeft === 0) {
       clearInterval(timerInterval);
        const date = new Date();
+       const month =date.getMonth()+1;
+       const day = date.getDate();
+       const year = date.getFullYear();
        const accuracyText = document.querySelector('#accuracy').textContent;
        const li = document.createElement('li');
-       li.textContent = `Date = ${date}
-       Accuracy = ${accuracyText}`;
+       li.textContent = `Date: ${month}/${day}/${year} & 
+        ${accuracyText}`;
        document.querySelector("#score-history").appendChild(li);
        modalOverlay.classList.add('show');
     }
@@ -101,6 +104,7 @@ if (event.key === 'Backspace') {
  checkMistakes(spans);
  updateTop()
  updateAccuracy()
+
 }
 
  function checkMistakes(spans){
@@ -165,6 +169,16 @@ function reSet(){
   function eventListeners(){
     document.querySelector('#start').addEventListener('click', () => {
       if (!timerStarted) {
+        const startImage = document.getElementById('start-image');
+    if (startImage) {
+      startImage.style.display = 'none';
+      if(titleEl){
+        titleEl.style.display="block"; 
+      }
+      if(contentEl){
+        contentEl.style.display="block"
+      }
+    }
         startTimer();
         timerStarted = true;
         typingStarted = true;

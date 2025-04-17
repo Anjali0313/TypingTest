@@ -2,11 +2,13 @@ body{
     padding: 0;
     margin: 0;
 }
-.app{
-    width: 100vh;
+#app{
+    width: 100vw;
     height: 100vh;
+    
 }
 header{
+  width: 100%;
     display: flex;
     justify-content:space-around;
     align-items: center;
@@ -14,9 +16,10 @@ header{
     font-family:Georgia, 'Times New Roman', Times, serif ;
 }
 main{
+  width: 90vw;
     display: flex;
     flex-direction: column;
-    padding:80px;
+    padding:70px;
 }
 .maindiv{
     background-color: rgb(11, 44, 60);
@@ -95,7 +98,7 @@ main .text p{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    background-color: rgba(0, 0, 0, 0.7); 
     z-index: 999;
     justify-content: center;
     align-items: center;
@@ -162,7 +165,6 @@ main .text p{
     background-color: #3498db; 
     color: white;
     padding: 10px 20px;
-  
     border: none;
     border-radius: 6px;
     font-size: 20px;
@@ -180,7 +182,107 @@ main .text p{
 #Next-btn:hover {
   background-color: #ae2752; 
 }
-  @media (max-width: 768px) {
+#start-image {
+  width: 50vw;
+  height: 30vh;
+  display: block;
+  margin: 0 auto;
+}
+#title, #content {
+  display: none;
+}
+@media(max-width:1024px) {
+  header{
+  height:10% ;
+   font-size: 25px;
+    }
+    main{
+      padding:0;
+     width: 100vw;
+    }
+    .maindiv{
+      height: 84vh;
+      border-radius:0;
+     }
+     main .head{
+      height: 100px;
+      font-size: 35px;
+    }
+    main .text{
+      height: 80%
+    }
+    main .foot{
+    height: 100px;
+    }
+    main .text p{
+    font-size:37px;
+    margin-top: -20px;
+    }
+    
+    main .text h2{
+    font-size:45px;
+  margin-top: -250px;
+    }
+    #start, #resetBtn, #Next-btn {
+      font-size: 40px;
+    }
+    #start-image {
+      width: 70vw;
+      height:45vh;
+      
+    }
+}
+  @media (max-width: 500px) {
+
+    header{
+  width: 100vw;
+ font-size: 20px;
+ height: 70px;
+  }
+main{
+ width: 100vw;
+  padding:0;
+}
+.maindiv{
+ height: 100%;
+ border-radius:0;
+}
+main .head{
+  height: 70px;
+  font-size: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+main .text{
+height: 84vh;
+row-gap:0;
+display:flex;
+flex-direction: column;
+justify-content: start;
+flex-wrap: wrap;
+}
+main .foot{
+height: 50px;
+}
+
+main .text h2{
+font-size:31px;
+margin-top:-1px;
+}
+main .text p{
+  margin-top: -26px;
+font-size:29px;
+
+}
+#start, #resetBtn, #Next-btn {
+  font-size: 25px;
+}
+#start-image {
+  margin-top: 90px;
+  width: 70vw;
+  height:60vh;
+  
+}
     .modal-content {
       max-width: 100%;
       padding: 15px;
@@ -200,4 +302,5 @@ main .text p{
       font-size: 0.9rem;
       padding: 8px 16px;
     }
+
   }
