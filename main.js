@@ -1,5 +1,5 @@
 import { createServer } from 'miragejs';
-import { stories } from './modules/stories';
+import { stories } from '/modules/stories';
   createServer({
     routes() {
       this.get('/api/stories', () => {
